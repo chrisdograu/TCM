@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore</title>
+
+    <link rel="stylesheet" href="conf.css">
+    <link rel="stylesheet" href="box.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="chris">
+            <p> Created by: Christian</p>
+            <hr>
+        </div>
+
+        <div class="etc">
+            <a href="inicio.html">
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+            </a>
+            <a href="inicio.html">
+                <div class="tema">
+                    <h1>GameStore</h1>
+                </div>
+            </a>
+            <div class="lemas">
+                <div class="lema">
+                    <p>the search for the best is over</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nasv">
+        
+
+            <a href="xbox.html">xbox</a>
+            <a href="playstation.html">playstation</a>
+            <a href="pc.html">pc</a>
+            <a href="mobile.html">mobile</a>
+        
+        </div>
+      
+    </nav>
+
+    <main>
+        <div class="buscar" id="divBusca">
+            <input type="text" id="txtBusca" placeholder="Search..." />
+        </div>
+
+        <div class="papo">
+            <h1>XBOX</h1>
+            <p>Discover a new era of gaming with Xbox, one of the most powerful and innovative gaming platforms in the world. With impressive graphics, next-gen performance, and a vast library of exclusive games, Xbox offers an unmatched experience for gamers of all kinds.</p>
+            <p>With Xbox, you’re not just playing; you’re entering an interactive ecosystem that connects players around the world. Features like Xbox Live and cross-play allow you to compete and cooperate with friends and players from different platforms. Get ready to embark on a one-of-a-kind journey with the confidence of a platform that evolves with each generation.</p>
+        </div>
+
+        <div class="reta">
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="small.png" alt="Elden">
+                        <p class="sla">
+                            Elden Ring (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="amoung.html">
+                        <img src="cover.png" alt="Among Us">
+                        <p class="sla">
+                            Among Us (Pc/Console/Mobile)
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="mine.png" alt="Minecraft">
+                        <p class="sla">
+                            Minecraft (Pc/Console/Mobile/Nintendo)
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="resident.png" alt="Resident Evil 2 Remake">
+                        <p class="sla">
+                            Resident Evil 2 (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="reta">
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="assa.png" alt="Assassin's Creed">
+                        <p class="sla">
+                            Assassin's Creed Mirage (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="modern.webp" alt="Call of Duty">
+                        <p class="sla">
+                            COD Modern Warfare 2 (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="resi.png" alt="Resident Evil 4">
+                        <p class="sla">
+                            Resident Evil 4 (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="alien.png" alt="Alien Isolation">
+                        <p class="sla">
+                            Alien Isolation (Pc/Console)
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="small.png" alt="Game 1" class="carousel-item">
+                <img src="alien.png" alt="Game 2" class="carousel-item">
+                <img src="cover.png" alt="Game 3" class="carousel-item">
+                <img src="mine.png" alt="Game 4" class="carousel-item">
+            </div>
+            
+            <!-- Navigation buttons -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <hr>
+
+        <div class="reto">
+            <div class="contaF">
+                <p>contact:algum@gmail.com</p>
+            </div>
+
+            <div class="game">
+                <h1>GameStore</h1>
+            </div>
+            <div class="logos">
+                <img src="insta.png" alt="Instagram">
+                <img src="" alt="">
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        let index = 0;
+
+        // Function to move the slides
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
+            
+            // Update the index
+            index += step;
+            
+            // If the index exceeds the limits, loop back to the beginning or end
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+
+            // Move the images
+            const newTransform = -index * 100; // Move one image width
+            document.querySelector('.carousel-images').style.transform = `translateX(${newTransform}%)`;
+        }
+
+        // Automatic navigation (every 5 seconds)
+        setInterval(() => {
+            moveSlide(1); // Move to the next image
+        }, 5000); // 5-second interval
+    </script>
+
+</body>
+
+</html>

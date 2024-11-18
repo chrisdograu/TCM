@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore</title>
+
+    <link rel="stylesheet" href="conf.css">
+    <link rel="stylesheet" href="box.css">
+</head>
+
+<body>
+    <header>
+        <div class="chris">
+            <p>Created by: Christian</p>
+            <hr>
+        </div>
+
+        <div class="etc">
+            <a href="inicio.html">
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+            </a>
+            <a href="inicio.html">
+                <div class="tema">
+                    <h1>GameStore</h1>
+                </div>
+            </a>
+            <div class="lemas">
+                <div class="lema">
+                    <p>The search for the best is over</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nasv">
+      
+
+            <a href="xbox.html">Xbox</a>
+            <a href="playstation.html">PlayStation</a>
+            <a href="pc.html">PC</a>
+            <a href="mobile.html">Mobile</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="buscar" id="divBusca">
+            <input type="text" id="txtBusca" placeholder="Search..." />
+        </div>
+
+        <div class="papo" style="background-color: #b0b0b0;">
+            <h1 style="color: #8e44ad;">PC</h1>
+            <p style="color: #1e1e1e;">Experience the total freedom of gaming on PC, a platform that offers the best performance, stunning graphics, and advanced customization. PC allows you to adjust your system to your needs, providing a variety of hardware options to achieve optimal performance in every game.</p>
+            <p style="color: #1e1e1e;">With access to a huge library of games and an active community, the PC is where gaming evolves without limitations. Players from all around the world connect through platforms like Steam, Epic Games Store, and more. Get ready for epic immersions, cutting-edge graphics experiences, and a variety of exclusive titles. On PC, you define your gaming experience!</p>
+        </div>
+
+        <div class="reta">
+            <!-- Game Product Listings -->
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="small.png" alt="Elden Ring">
+                        <p class="sla">Elden Ring</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="amoung.html">
+                        <img src="cover.png" alt="Among Us">
+                        <p class="sla">Among Us</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="mine.png" alt="Minecraft">
+                        <p class="sla">Minecraft</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="resident.png" alt="Resident Evil 2">
+                        <p class="sla">Resident Evil 2</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="reta">
+            <!-- More Games -->
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="assa.png" alt="Assassin's Creed Mirage">
+                        <p class="sla">Assassin's Creed Mirage</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="modern.webp" alt="Call of Duty: Modern Warfare 2">
+                        <p class="sla">COD Modern Warfare 2</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="resi.png" alt="Resident Evil 4">
+                        <p class="sla">Resident Evil 4</p>
+                    </a>
+                </div>
+            </div>
+            <div class="orga">
+                <div class="caixa">
+                    <a href="">
+                        <img src="alien.png" alt="Alien Isolation">
+                        <p class="sla">Alien Isolation</p>
+                        <p>R$99,00</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="small.png" alt="Game 1" class="carousel-item">
+                <img src="alien.png" alt="Game 2" class="carousel-item">
+                <img src="cover.png" alt="Game 3" class="carousel-item">
+                <img src="mine.png" alt="Game 4" class="carousel-item">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <hr>
+        <div class="reto">
+            <div class="contaF">
+                <p>Contact: algum@gmail.com</p>
+            </div>
+            <div class="game">
+                <h1>GameStore</h1>
+            </div>
+            <div class="logos">
+                <img src="insta.png" alt="Instagram">
+                <img src="" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let index = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
+            index += step;
+
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+
+            const newTransform = -index * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${newTransform}%)`;
+        }
+
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+
+</html>
